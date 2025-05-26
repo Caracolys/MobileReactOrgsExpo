@@ -1,6 +1,7 @@
-import React from "react";
-import { Text, ImageSourcePropType, View, Image, StyleSheet } from "react-native";
-import Stars from "../../components/Stars";
+import React, { useState } from 'react';
+import { Text, ImageSourcePropType, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
+import Stars from '../../components/Stars';
 
 type ProducerProps = {
     name: string;
@@ -10,16 +11,25 @@ type ProducerProps = {
 };
 
 export default function Producer({ name, image, distance, stars }: ProducerProps) {
-    return <View style={styles.card}>
+    const [selected, setSelected] = useState(false);
+
+    return <TouchableOpacity
+        style={styles.card}
+        onPress={() => setSelected(!selected)}
+    >
         <Image style={styles.image} source={image} />
         <View style={styles.info}>
             <View>
                 <Text style={styles.name}>{name}</Text>
-                <Stars quantity={stars} />
+                <Stars
+                    quantity={stars}
+                    editable={selected}
+                    large={selected}
+                />
             </View>
             <Text style={styles.distance}>{distance}</Text>
         </View>
-    </View>
+    </TouchableOpacity>;
 }
 
 const styles = StyleSheet.create({
@@ -54,5 +64,5 @@ const styles = StyleSheet.create({
     distance: {
         fontSize: 12,
         lineHeight: 19,
-    }
+    },
 });

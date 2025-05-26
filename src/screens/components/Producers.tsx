@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text } from "react-native";
-import { loadProducers } from "../../services/loadData";
-import Producer from "./Producer";
+import React, { useEffect, useState } from 'react';
+import { FlatList, StyleSheet, Text } from 'react-native';
+import { loadProducers } from '../../services/loadData';
+import Producer from './Producer';
 
 type Producer = {
     name: string;
@@ -23,19 +23,19 @@ export default function Producers({ top: Top }: ProducersProps) {
         setTitle(result.title);
         setList(result.list);
     }, []);
-
+    
     const TopOfList = () => {
         return <>
             <Top />
             <Text style={styles.title}>{title}</Text>
         </>
-    }
+    };
 
     return <FlatList
         data={list}
         renderItem={({ item }) => <Producer {...item} />}
         keyExtractor={({ name }) => name}
-        ListHeaderComponent={TopOfList} />
+        ListHeaderComponent={TopOfList} />;
 }
 
 const styles = StyleSheet.create({
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 16,
         marginTop: 16,
         fontWeight: 'bold',
-        color: '#464646'
-    }
+        color: '#464646',
+    },
 });

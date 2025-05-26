@@ -1,48 +1,47 @@
-import green from "../assets/produtores/green.png";
-import grow from "../assets/produtores/grow.png";
-import jennyJack from "../assets/produtores/jenny-jack.png";
-import potager from "../assets/produtores/potager.png";
-import salad from "../assets/produtores/salad.png";
+import green from '../assets/produtores/green.png';
+import grow from '../assets/produtores/grow.png';
+import jennyJack from '../assets/produtores/jenny-jack.png';
+import potager from '../assets/produtores/potager.png';
+import salad from '../assets/produtores/salad.png';
 
 const randomResult = (min: number, max: number) => {
-    return Math.random() * (max - min + 1) + min;
-}
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const producers = {
-    title: "Produtores",
+    title: 'Produtores',
     list: [
         {
-            name: "Green",
+            name: 'Green',
             image: green,
             distance: `${randomResult(1, 500)}m`,
             stars: randomResult(1, 5),
         },
         {
-            name: "Grow",
+            name: 'Grow',
             image: grow,
             distance: `${randomResult(1, 500)}m`,
             stars: randomResult(1, 5),
         },
         {
-            name: "Jenny Jack Farm",
+            name: 'Jenny Jack Farm',
             image: jennyJack,
             distance: `${randomResult(1, 500)}m`,
             stars: randomResult(1, 5),
         },
         {
-            name: "Potager",
+            name: 'Potager',
             image: potager,
             distance: `${randomResult(1, 500)}m`,
             stars: randomResult(1, 5),
         },
         {
-            name: "Salad",
+            name: 'Salad',
             image: salad,
             distance: `${randomResult(1, 500)}m`,
             stars: randomResult(1, 5),
         },
     ]
-}
+};
 
 export default producers;
-

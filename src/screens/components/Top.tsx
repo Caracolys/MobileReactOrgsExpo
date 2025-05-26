@@ -1,8 +1,8 @@
-import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-import { loadTop } from "../../services/loadData";
-import logo from "../../assets/logo.png";
+import { loadTop } from '../../services/loadData';
+import logo from '../../assets/logo.png';
 
 class Top extends React.Component {
     state = {
@@ -10,12 +10,12 @@ class Top extends React.Component {
             welcome: '',
             caption: '',
         },
-        list: []
-    }
+        list: [],
+    };
 
     updateTop() {
         const back = loadTop();
-        this.setState({ top: back })
+        this.setState({ top: back });
     }
     componentDidMount() {
         this.updateTop();
@@ -26,7 +26,7 @@ class Top extends React.Component {
             <Image source={logo} style={styles.image} />
             <Text style={styles.welcome}>{this.state.top.welcome}</Text>
             <Text style={styles.caption}>{this.state.top.caption}</Text>
-        </View>
+        </View>;
     }
 }
 
