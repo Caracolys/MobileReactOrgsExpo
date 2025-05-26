@@ -14,34 +14,34 @@ const producers = {
         {
             name: 'Green',
             image: green,
-            distance: `${randomResult(1, 500)}m`,
+            distance: randomResult(1, 500),
             stars: randomResult(1, 5),
         },
         {
             name: 'Grow',
             image: grow,
-            distance: `${randomResult(1, 500)}m`,
+            distance: randomResult(1, 500),
             stars: randomResult(1, 5),
         },
         {
             name: 'Jenny Jack Farm',
             image: jennyJack,
-            distance: `${randomResult(1, 500)}m`,
+            distance: randomResult(1, 500),
             stars: randomResult(1, 5),
         },
         {
             name: 'Potager',
             image: potager,
-            distance: `${randomResult(1, 500)}m`,
+            distance: randomResult(1, 500),
             stars: randomResult(1, 5),
         },
         {
             name: 'Salad',
             image: salad,
-            distance: `${randomResult(1, 500)}m`,
+            distance: randomResult(1, 500),
             stars: randomResult(1, 5),
         },
-    ]
+    ],
 };
 
 export default producers;
